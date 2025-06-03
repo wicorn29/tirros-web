@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Started - Tirros DNS</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #000000;
+      --accent: #000000;
+      --fg-muted: #000000;
+      --bg-muted: #ffffff;
+      --border: #000000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --fg: #ffffff;
+        --accent: #ffffff;
+        --fg-muted: #ffffff;
+        --bg-muted: #000000;
+        --border: #ffffff;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background-color: var(--bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--fg);
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .subheading {
+      text-align: center;
+      color: var(--fg-muted);
+      margin-top: -0.5rem;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section h2 {
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .options {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .option {
+      background-color: var(--bg-muted);
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: var(--accent);
+      color: var(--bg);
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.25rem;
+      border-radius: 50px;
+      width: fit-content;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: var(--bg);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .copy-button {
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent);
+      color: var(--bg);
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .copy-button:hover {
+      background-color: var(--bg);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--fg-muted);
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tirros DNS Setup</h1>
+    <nav>
+      <a href="https://tirros.net">Home</a>
+      <a href="/why-blocked">Why Blocked?</a>
+    </nav>
+  </header>
+
+  <div class="subheading">
+    <p>Choose one of the following options to get started with Tirros DNS.</p>
+  </div>
+
+  <section>
+    <h2>Set Up Your Device</h2>
+    <div class="options">
+      <!-- Option 1: Set DNS manually -->
+      <div class="option">
+        <h3>Manually Set DNS</h3>
+        <p>To use Tirros DNS, set your device's DNS to <code>50.109.234.45</code>.</p>
+        <button class="copy-button" onclick="copyDNS()">Copy DNS Address</button>
+      </div>
+
+      <!-- Option 2: Download Configuration Profile for Apple Devices -->
+      <div class="option">
+        <h3>Download Configuration Profile (Apple Devices)</h3>
+        <p>For Apple devices, you can download a configuration profile to automatically set up the DNS for you.</p>
+        <a href="/tirconfig/apple/tirros.mobileconfig" class="button">Download Profile</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How to Set Up Tirros</h2>
+    <p>To use Tirros DNS, follow these steps:</p>
+    <ol>
+      <li><strong>Option 1: Set DNS (Recommended):</strong>
+        <ul>
+          <li>Go to your router or device's DNS settings. (If you're doing this on your rouer, itt's different for every router. Look up how to change DNS on your router)</li>
+          <li>Set the primary DNS to the DNS listed above.</li>
+          <li>Please note that with this method, when you leave your home wifi the network will become unfiltered.</li>
+        </ul>
+      </li>
+      <li><strong>Option 2: Download Configuration Profile (Apple Devices):</strong>
+        <ul>
+          <li>Open this page on an apple device, and then click the Download Profile button.</li>
+          <li>The device will say the page is trying to download a configuration profile, click allow.</li>
+          <li>Open settings, and at the top there will be a banner saying "Profile Downloaded"</li>
+          <li>Click on it and follow the on-screen instructions.</li>
+          
+          <li>Please note that with this method, Tirros will defend the device even away from your home network.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <div class="contact">
+    <p>© 2025 Tirros Networks</p>
+  </div>
+
+  <script>
+    function copyDNS() {
+      // Create a temporary input to copy the DNS address
+      const tempInput = document.createElement('input');
+      tempInput.value = '50.109.234.45';
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      alert('DNS address copied to clipboard!');
+    }
+  </script>
+</body>
+</html>

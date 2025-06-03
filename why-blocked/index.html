@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <title>Tirros Networks - Why is a Site Blocked?</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #000000;
+      --accent: #000000;
+      --fg-muted: #555555;
+      --bg-muted: #f0f0f0;
+      --border: #aaaaaa;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --fg: #000000;
+        --accent: #000000;
+        --fg-muted: #555555;
+        --bg-muted: #f0f0f0;
+        --border: #aaaaaa;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #181818;
+        --fg: #ffffff;
+        --accent: #ffffff;
+        --fg-muted: #bbbbbb;
+        --bg-muted: #333333;
+        --border: #555555;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background-color: var(--bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--fg);
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .subheading {
+      text-align: center;
+      color: var(--fg-muted);
+      margin-top: -0.5rem;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section h2 {
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    .feature {
+      background-color: var(--bg-muted);
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .button {
+      display: block;
+      margin: 3rem auto;
+      padding: 1rem 2rem;
+      background-color: var(--accent);
+      color: var(--bg);
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.25rem;
+      border-radius: 50px;
+      width: fit-content;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: var(--bg);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--fg-muted);
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    code {
+      background: #e0e0e0;
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body data-sitedown="false">
+  <header>
+    <h1>Tirros DNS</h1>
+    <nav>
+      <a href="https://tirros.net">Home</a>
+      <a href="/setup">Get Started</a>
+    </nav>
+  </header>
+  
+  <section>
+    <h1>Why does Tirros block content?</h1>
+    <p>
+      If you came across a site or service that has been blocked by Tirros, there is a reason for it. This is part of our mission to provide a safe, family-friendly, and privacy-respecting internet experience.
+    </p>
+
+    <h2>Common Block Reasons:</h2>
+    <ul>
+      <li><strong>Not COPPA Compliant:</strong> A site may collect personal information from children under 13 without following the rules of the <a href="https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa" target="_blank" rel="noopener">Children’s Online Privacy Protection Act (COPPA)</a>.</li>
+      <li><strong>Phishing or Malware:</strong> A site may impersonate trusted services or distribute harmful software that can infect your device.</li>
+      <li><strong>Ad or Tracking Servers:</strong> A site may include invasive ads, behavioral trackers, or attempt to fingerprint your device.</li>
+      <li><strong>Stalkerware or Spyware:</strong> Some services or apps covertly monitor activity and violate user privacy or safety guidelines.</li>
+      <li><strong>Sexually Explicit Content:</strong> Pornographic or graphically sexual material is restricted to ensure general-audience safety.</li>
+      <li><strong>Online Dating Services:</strong> Domains focused on dating, hookups, or adult companionship are blocked to maintain a family-safe environment.</li>
+      <li><strong>Uncategorized or Suspicious Content:</strong> Newly registered, unverified, or suspicious domains may be temporarily restricted pending review.</li>
+    </ul>
+
+    <p>
+      If you believe a site was incorrectly blocked or wish to request a review, please tap or click the blocked page several times.
+    </p>
+
+   
+  </section>
+
+  <footer>
+    &copy; 2025 Tirros Networks
+  </footer>
+
+  <script>
+    // Check if sitedown data attribute is set to "true"
+    const body = document.querySelector('body');
+    if (body.getAttribute('data-sitedown') === 'true') {
+      // Redirect to /down if site is down
+      window.location.href = '/down';
+    }
+  </script>
+</body>
+</html>
