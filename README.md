@@ -1,3 +1,3 @@
-# Tirros Networks Website
+# Tirros Networks
 
-wow so cool
+Repo for tirros.net and some applets
